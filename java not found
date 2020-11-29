@@ -1,0 +1,5 @@
+nano /etc/init.d/unifi
+
+uncomment set_java_home-Variable
+
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-armhf/
