@@ -1,0 +1,9 @@
+echo -e "\e[35mupdating+installing certs+https\e[0m"
+apt update && apt install ca-certificates apt-transport-https -y
+echo -e "\e[35mapt sources list\e[0m"
+echo 'deb https://www.ui.com/downloads/unifi/debian stable ubiquiti' | tee /etc/apt/sources.list.d/100-ubnt-unifi.list
+echo -e "\e[35mgetting keys\e[0m"
+wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg
+echo -e "\e[35minstall unifi\e[0m"
+apt update && apt install openjdk-8-jdk unifi -y
+update-alternatives --config java
